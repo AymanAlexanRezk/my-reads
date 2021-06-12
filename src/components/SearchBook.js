@@ -1,26 +1,37 @@
 import React, { Component } from 'react';
-class SearchBook extends Component {
-  state = {};
+import { Link } from 'react-router-dom';
+import Book from './Book';
+class SearchBooks extends Component {
   render() {
     return (
-      <div className="search-books">
-        <div className="search-books-bar">
-          <button
-            className="close-search"
-            onClick={() => this.setState({ showSearchPage: false })}
-          >
-            Close
-          </button>
-          <div className="search-books-input-wrapper">
-            <input type="text" placeholder="Search by title or author" />
+      <div>
+        <div className="search-books">
+          <div className="search-books-bar">
+            <Link to="/">
+              <button className="close-search">Close</button>
+            </Link>
+            <div className="search-books-input-wrapper">
+              <input
+                type="text"
+                placeholder="Search by title or author"
+                onChange={this.props.handleSearch}
+              />
+            </div>
           </div>
-        </div>
-        <div className="search-books-results">
-          <ol className="books-grid" />
+          <div className="search-books-results">
+            <ol className="books-grid">
+              {this.props.searchResponse.map((book) => (
+                <Book
+                  updateShelf={this.props.updateShelf}
+                  key={book.id}
+                  book={book}
+                />
+              ))}
+            </ol>
+          </div>
         </div>
       </div>
     );
   }
 }
-
-export default SearchBook;
+export default SearchBooks;
