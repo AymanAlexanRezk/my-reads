@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import BookShelf from './BookShelf';
 class BooksList extends Component {
-  state = {};
   render() {
     return (
       <div className="list-books">
@@ -36,7 +35,7 @@ class BooksList extends Component {
         </div>
         <div className="open-search">
           <Link to="/search">
-            <button onClick={this.props.searchReset}>Add Book</button>
+            <button onClick={this.props.searchReset}></button>
           </Link>
         </div>
       </div>

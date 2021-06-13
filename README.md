@@ -1,5 +1,12 @@
 # MyReads Project
+Implementation of React interactivity to the starter template for the final assessment project for Udacity's React Fundamentals course - Myreads.
+All components are tree-structured and functional.
 
+Three shelves are available:
+
+Currently Reading
+Want to Read
+Read
 
 To get started developing right away:
 
